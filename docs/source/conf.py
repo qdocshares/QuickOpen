@@ -6,6 +6,11 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
+import os
+import sys
+
+
+
 project = 'QuickOpen'
 copyright = '2024, biaowang'
 author = 'biaowang'
@@ -34,7 +39,7 @@ myst_enable_extensions = [
 templates_path = ['_templates']
 exclude_patterns = []
 
-
+html_logo = './_static/quectel-logo.png'
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
