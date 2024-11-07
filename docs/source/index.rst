@@ -36,3 +36,4 @@ Markdown Documents
    :maxdepth: 2
 
     md/index
+    md/TestDoc
