@@ -26,14 +26,16 @@ You need the pppd and the chat.
 
 ### Debian¿Ubuntu OS
 
-Debian System
+Debian¿¿¿¿¿¿¿pppd¿¿¿apt¿¿
 
 	sudo apt-get install ppp
 	
 
+¿¿Quectel¿Readme¿¿¿¿
 	
 	quectel-pppd.sh
 	
+¿¿
 
 	copy the quectel-chat-connect quectel-chat-disconnect quectel-ppp to /etc/ppp/peers
 	modify the quectel-ppp and quectel-chat-connect
@@ -56,11 +58,12 @@ pppd ¿¿¿libcap.
 
 PPP support (CONFIG_PPP), the asynchronous line discipline (CONFIG_PPP_ASYNC), the driver for your serial port device and/or the PPP over Ethernet (PPPoE) protocol driver (CONGIG_PPPOE) must be compiled into the kernel or loaded as kernel modules. Udev doesn't load the ppp_generic and pppoe modules automatically, they must be mentioned in the /etc/sysconfig/modules file. 
 
+¿¿¿¿
 [ppp¿¿](http://www.linuxfromscratch.org/blfs/view/6.3/basicnet/ppp.html)
 
 ### wvdial
 
-wvdial
+wvdial¿¿¿¿¿¿¿¿Linux ¿¿¿¿¿¿¿¿¿¿¿¿¿chat scripts¿¿¿¿¿¿¿¿pap-secrets ¿chap-secrets¿¿¿¿¿¿¿¿¿¿¿modem ¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿wvdial ¿ppp ¿¿¿¿linux ¿¿¿¿¿¿¿¿¿¿¿¿¿wvdial ¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿
 
 
 ``` Exit status values.
