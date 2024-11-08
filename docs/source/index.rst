@@ -57,7 +57,7 @@ To make the module supported on Android.
 .. toctree::
       :maxdepth: 2
 
-    audio/index
+    android/index
 
 
 Indices and tables
