@@ -5,12 +5,13 @@ Usbnet Support
 ================
 
 .. toctree::
-    :maxdepth: 1
+    :maxdepth: 2
 
     UsbNet
     DiaUp
     ppp
     MoreAboutCM
+    UsbSerial
 
 .. only::  subproject and html
 

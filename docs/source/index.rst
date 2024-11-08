@@ -33,7 +33,7 @@ It works for both STD and QuecOpen module.
 .. toctree::
       :maxdepth: 2
 
-    usbnet/index
+    usbdriver/index
 
 
 Indices and tables
