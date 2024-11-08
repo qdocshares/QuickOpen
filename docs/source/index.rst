@@ -23,6 +23,19 @@ Quectel Open SDK Quick Start
 
     quickstart/index
 
+
+UsbNet
+====================
+
+It works for both STD and QuecOpen module.
+
+
+.. toctree::
+      :maxdepth: 2
+
+    usbnet/index
+
+
 Indices and tables
 ==================
 
