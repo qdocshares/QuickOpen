@@ -1,13 +1,14 @@
 .. SPDX-License-Identifier: GPL-2.0
 
 ================
-Audio Support
+Power Support
 ================
 
 .. toctree::
     :maxdepth: 1
 
-    pcm
+    suspend
+    low-power
 
 .. only::  subproject and html
 
