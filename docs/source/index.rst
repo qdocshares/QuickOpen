@@ -48,6 +48,17 @@ Audio Part.
     audio/index
 
 
+Android Support
+====================
+
+To make the module supported on Android.
+
+
+.. toctree::
+      :maxdepth: 2
+
+    audio/index
+
 
 Indices and tables
 ==================
