@@ -1,20 +1,27 @@
 .. SPDX-License-Identifier: GPL-2.0
 
-=========================
-这是一个索引
-=========================
+================
+Watchdog Support
+================
 
-总得写点什么才行，不想写也不行
-
-
-知识就是力量
-====================
-
-
-这力量是铁，这力量是钢
-       
 .. toctree::
     :maxdepth: 1
 
-   TestDoc
+    hpwdt
+    mlx-wdt
+    pcwd-watchdog
+    watchdog-api
+    watchdog-kernel-api
+    watchdog-parameters
+    watchdog-pm
+    wdt
+    convert_drivers_to_kernel_api
+    TestDoc
 
+
+.. only::  subproject and html
+
+   Indices
+   =======
+
+   * :ref:`genindex`
