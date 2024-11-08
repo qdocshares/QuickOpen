@@ -24,7 +24,7 @@ Quectel Open SDK Quick Start
     quickstart/index
 
 
-UsbNet
+Usb Driver Support on Host side
 ====================
 
 It works for both STD and QuecOpen module.
@@ -34,6 +34,19 @@ It works for both STD and QuecOpen module.
       :maxdepth: 2
 
     usbdriver/index
+
+
+Audio Support
+====================
+
+Audio Part.
+
+
+.. toctree::
+      :maxdepth: 2
+
+    audio/index
+
 
 
 Indices and tables
