@@ -46,27 +46,25 @@ rild.rc is only available for Android 7.x or later versions.
 The name of RILD service might also be vendor.ril-daemon. In this document, we will only use service ril-daemon for illustration.
 
 
-> Modules Accessed via USB/PCIe Interface
-
 For modules accessed via USB/PCIe interface, add the following lines to init*.rc or *rild.rc.
 
 - For Android 4.x–7.x
 
     service ril-daemon /system/bin/rild -l <libreference-ril path>
-        class main
-        socket rild stream 660 root radio 
-        socket rild-debug stream 660 radio system 
-        user root 
-        group radio cache inet misc audio sdcard_rw log
+            class main
+            socket rild stream 660 root radio 
+            socket rild-debug stream 660 radio system 
+            user root 
+            group radio cache inet misc audio sdcard_rw log
 
 - For Android 8.x and later version
 
-A
     service ril-daemon /vendor/bin/hw/rild -l <libreference-ril path>
-        class main
-        user root
-        group radio cache inet misc audio sdcard_rw log
-        capabilities BLOCK_SUSPEND NET_ADMIN NET_RAW
+            class main
+            user root
+            group radio cache inet misc audio sdcard_rw log
+B
+            capabilities BLOCK_SUSPEND NET_ADMIN NET_RAW
 
 
 Make sure that 
@@ -101,5 +99,7 @@ PRODUCT_PACKAGES += android.hardware.radio.config-v2-ndk.vendor
 
 
 ### build errors
+
+
 
 

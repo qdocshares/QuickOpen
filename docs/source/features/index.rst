@@ -10,6 +10,7 @@ Extended Features
 
     UART_Forwarding
     Auto-startup_Service
+    Quectel_API
 
 .. only::  subproject and html
 
