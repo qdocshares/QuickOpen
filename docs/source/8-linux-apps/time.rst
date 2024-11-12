@@ -38,7 +38,6 @@ Set the time manually
     /var/volatile/tmp # date
     Mon Jan  1 09:01:12 CST 2018
 
-
 Set the time via NTP
 ---------------------
 
@@ -47,7 +46,8 @@ Set the time via NTP
 
 
 
-.. code-block:: python
+.. code-block::
+
     {
             "sync_accuracy_ms":2000,
             "modem_sync_enable":1, // NITZ time from modem

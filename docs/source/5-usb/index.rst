@@ -15,7 +15,7 @@ Usb Support
     UsbSerial
     adb
     usb_mode
-    
+    usbmon
 
 .. only::  subproject and html
 

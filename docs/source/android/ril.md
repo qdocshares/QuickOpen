@@ -61,6 +61,7 @@ For modules accessed via USB/PCIe interface, add the following lines to init*.rc
 
 - For Android 8.x and later version
 
+A
     service ril-daemon /vendor/bin/hw/rild -l <libreference-ril path>
         class main
         user root
@@ -68,7 +69,10 @@ For modules accessed via USB/PCIe interface, add the following lines to init*.rc
         capabilities BLOCK_SUSPEND NET_ADMIN NET_RAW
 
 
-
+Make sure that 
+getprop | grep ril
+ps -efl | grep ril
+You can see that rild is running.
 
 
 
@@ -77,5 +81,25 @@ For modules accessed via USB/PCIe interface, add the following lines to init*.rc
 
 ## FAQ
 
+### rild is restarting 
+
+- librilutils.so not found
+
+    CANNOT LINK EXECUTABLE "/vendor/bin/hw/rild": library "librilutils.so" not found: needed by /vendor/lib64/libril.so in namespace (default)
+
+
+mmm hardware/ril/librilutils
+PRODUCT_PACKAGES += librilutils.vendor
+
+- android.hardware.radio.config-v2-ndk.so not found
+
+    CANNOT LINK EXECUTABLE "/vendor/bin/hw/rild": library "android.hardware.radio.config-v2-ndk.so" not found: needed by /vendor/lib64/libril.so
+
+mmm hardware/interfaces/radio/aidl
+PRODUCT_PACKAGES += android.hardware.radio.config-v2-ndk.vendor
+
+
+
+### build errors
 
 

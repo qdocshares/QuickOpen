@@ -1,5 +1,9 @@
 # PCM interface
 
+
+
+## PCM interface
+
 There are two PCM interface. 
 
 But the primary PCM is set to SPI mode by default.
@@ -27,7 +31,28 @@ Secondary PCM
 
 ![](pcm_reference_design.png)
 
-## 
+## CodeC Supported
+
+
+The CodeC have tried
+
+| QDAI   |  CodeC |
+| ------ | ------ |
+|  1  | Digital PCM out |
+|  2  | NAU8814         |
+|  3  | ACL5616         |
+|  4  | MAX9860         |
+|  5  | TLV320ALC3104   |
+|  6  | NAU88C10/NAU88U10 |
+|  7  | MAX9867          |
+|  8  | ALC5660          |
+|  9  | ALC5616E         |
+| 10  | ES8311           |
+| 11  | ES8374           |
+| 12  | ES838            |
+
+
+
 
 
 

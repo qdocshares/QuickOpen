@@ -20,6 +20,7 @@ JSON-C API Introduction
 ----------------------------------
 
 .. code-block:: c
+
     Enumeration:
     typedef enum json_type {
        json_type_null,
