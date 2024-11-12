@@ -8,6 +8,7 @@ Linux Applications
     :maxdepth: 1
 
     time
+    json-xml
 
 .. only::  subproject and html
 

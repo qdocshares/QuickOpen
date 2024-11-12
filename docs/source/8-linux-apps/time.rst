@@ -32,9 +32,11 @@ and it should not be manipulated.
 Set the time manually
 ----------------------
 
-/var/volatile/tmp # echo "user: 1514768470000" > ql_time_set_pipe
-/var/volatile/tmp # date
-Mon Jan  1 09:01:12 CST 2018
+.. code-block:: 
+
+    /var/volatile/tmp # echo "user: 1514768470000" > ql_time_set_pipe
+    /var/volatile/tmp # date
+    Mon Jan  1 09:01:12 CST 2018
 
 
 Set the time via NTP
@@ -44,7 +46,9 @@ Set the time via NTP
 /etc/ql_time_conf.json
 
 
-        {
+
+.. code-block:: python
+    {
             "sync_accuracy_ms":2000,
             "modem_sync_enable":1, // NITZ time from modem
             "gnss_sync_enable":1,  // UTC time from GNSS
