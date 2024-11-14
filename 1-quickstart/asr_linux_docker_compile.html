@@ -1,0 +1,240 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EC200A SDK build based on Docker &mdash; QuickOpen 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            QuickOpen
+              <img src="../_static/quectel-logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Quick Start</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../2-Platform-Stability/index.html">Platform Support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../3-Network-Management/index.html">Network Management Support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../4-Peripheral-Interface/index.html">Peripheral Device Support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../5-usb/index.html">Usb Support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../6-audio/index.html">Audio Support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../7-power/index.html">Power Support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../8-linux-apps/index.html">Linux Applications</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../android/index.html">Android Support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../features/index.html">Extended Features</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">QuickOpen</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">EC200A SDK build based on Docker</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/1-quickstart/asr_linux_docker_compile.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="ec200a-sdk-build-based-on-docker">
+<h1>EC200A SDK build based on Docker<a class="headerlink" href="#ec200a-sdk-build-based-on-docker" title="Link to this heading"></a></h1>
+<p>We will provide customers with a guide.
+Quectel_EC200A&amp;ECx00R_Series_QuecOpen(SDK)_Quick_Start_Guide_V1.1.pdf
+However, customers may still encounter some compilation errors. We provide customers with guidance based on docker.</p>
+<section id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Install the docker on Ubuntu</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">sudo</span> <span class="n">apt</span> <span class="n">update</span>
+    <span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">docker</span><span class="o">.</span><span class="n">io</span>
+    <span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">docker</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Add the current user to the docker group</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    sudo groupadd docker
+    sudo usermod -aG docker $USER
+    sudo gpasswd -a ${USER} docker
+    newgrp docker
+</pre></div>
+</div>
+<p>If you do not try this, you can only use docker with root.</p>
+<ul class="simple">
+<li><p>Add the linux kernel headers</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    sudo apt install -y linux-headers-`uname -r`
+</pre></div>
+</div>
+<p>By default, we should be able to see it in the /usr/src/linux-headers-`uname -r`.</p>
+</section>
+<section id="generate-the-docker-image-based-on-dockerfile">
+<h2>Generate the docker image based on Dockerfile<a class="headerlink" href="#generate-the-docker-image-based-on-dockerfile" title="Link to this heading"></a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>docker build -t asr_linux_env  .
+</pre></div>
+</div>
+<p>And then with  <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">images</span></code> you can see the asr_linux_env.</p>
+<p>Dockerfile:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>FROM ubuntu:18.04
+RUN apt-get update
+RUN apt-get upgrade --assume-yes
+RUN apt-get install --assume-yes perl  mc re2c g++ g++-multilib wget  sudo  python3 python3-pip
+
+ARG user=test
+
+RUN useradd --create-home --no-log-init --shell /bin/bash ${user} \
+    &amp;&amp; adduser ${user} sudo \
+    &amp;&amp; echo &quot;${user}:1&quot; | chpasswd
+
+RUN apt-get install --assume-yes   \
+            bison gcc make build-essential libc6-dev-i386 libncurses-dev \
+            coreutils diffstat  chrpath cpio  gawk sed  texi2html texinfo unzip flex bc  \
+            python3-setuptools rsync swig unzip zlib1g-dev file wget \
+            gcc-multilib g++-multilib gettext git libncurses5-dev   \
+            libssl-dev  clang g++  dos2unix python  python-pip  curl 
+
+RUN update-alternatives --install /usr/bin/python  python /usr/bin/python2   3
+
+RUN python -m pip install   --upgrade  pip
+
+RUN pip install pyhocon
+
+USER  ${user}
+</pre></div>
+</div>
+<p>The default user is test and the password is 1.
+It is based on Ubuntu 18.04.</p>
+</section>
+<section id="run-the-command-to-start-the-docker-container">
+<h2>Run the command to start the docker container.<a class="headerlink" href="#run-the-command-to-start-the-docker-container" title="Link to this heading"></a></h2>
+<p>For example, we put the quectel_asr_linux in the folder /data/quectel_asr_linux.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>docker run -it -v /data/quectel_asr_linux:/home/test/asr_linux  \
+        -v /usr/src/linux-headers-`uname -r`:/usr/src/linux-headers-`uname -r`  \
+        -v /lib/modules/`uname -r`:/lib/modules/`uname -r`  \
+        --name=asr_build  \
+        asr_linux_env  \
+        /bin/bash
+</pre></div>
+</div>
+<p>Notes:</p>
+<ul class="simple">
+<li><p><strong>-v /data/quectel_asr_linux:/home/test/asr_linux</strong> means that mount the sdk folder on the host machine at the /home/test/asr_linux in the container.</p></li>
+<li><p><strong>-v /usr/src/linux-headers-`uname -r`:/usr/src/linux-headers-`uname -r`</strong>  and <strong>-v /lib/modules/`uname -r`:/lib/modules/`uname -r`</strong>  means that the container shares the linux kernel headers and kernel modules with the host.</p></li>
+<li><p><strong>–name=asr_build</strong> means that asr_build is the docker container name of the docker container we run.</p></li>
+</ul>
+<p>If you want to enter the container, you can use the command</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>docker exec -it  asr_build /bin/bash
+</pre></div>
+</div>
+</section>
+<section id="how-to-build-the-sdk">
+<h2>How to build the SDK<a class="headerlink" href="#how-to-build-the-sdk" title="Link to this heading"></a></h2>
+<p>Here is an example to compile the EC200A_EUAB.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>source package/quectel/compile/ql_build_config \
+        &amp;&amp;   buildversion  EC200A_EUAB  EC200AEUABR03A01M1G V01 FFF EC200AEUABR03A01M1G 01 01.001  \
+    &amp;&amp; buildconfig  EC200A_EUAB  EC200AEUABR03A03M1G STD	\
+    &amp;&amp; build_fw
+</pre></div>
+</div>
+<p>buildconfig &lt;project&gt; &lt;version&gt; STD</p>
+<ul class="simple">
+<li><p>&lt;project&gt;  Module model. For example: EC200A_CNAA</p></li>
+<li><p>&lt;version&gt; Firmware version. For example: EC200ACNAAR01A01M1G</p></li>
+</ul>
+<p>The target firmware is in the bin/target.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, biaowang.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

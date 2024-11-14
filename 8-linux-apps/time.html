@@ -1,0 +1,206 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>System Time &mdash; QuickOpen 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="JSON-XML" href="json-xml.html" />
+    <link rel="prev" title="Linux Applications" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            QuickOpen
+              <img src="../_static/quectel-logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../1-quickstart/index.html">Quick Start</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../2-Platform-Stability/index.html">Platform Support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../3-Network-Management/index.html">Network Management Support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../4-Peripheral-Interface/index.html">Peripheral Device Support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../5-usb/index.html">Usb Support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../6-audio/index.html">Audio Support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../7-power/index.html">Power Support</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Linux Applications</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">System Time</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#set-the-time-manually">Set the time manually</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#set-the-time-via-ntp">Set the time via NTP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#time-zone">Time Zone</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="json-xml.html">JSON-XML</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../android/index.html">Android Support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../features/index.html">Extended Features</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">QuickOpen</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Linux Applications</a></li>
+      <li class="breadcrumb-item active">System Time</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/8-linux-apps/time.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="system-time">
+<h1>System Time<a class="headerlink" href="#system-time" title="Link to this heading"></a></h1>
+<p>QuecOpen supports an automatic system time synchronization and time source supports
+NITZ, GNSS and NTP.</p>
+<p>NITZ: NITZ is a timing service provided by the operators specialized for mobile communication devices.
+Operator base station takes the initiative to send this service to mobile devices. At present, Operators are
+still not able to confirm whether all base stations support NITZ timing service. The premise condition for
+obtaining this time is that there are supports from the base station and the device can make a normal
+network registration.</p>
+<p>GNSS: UTC time can be obtained after a successful GNSS positioning. The premise condition for
+obtaining this time is to call API related to GNSS within QuecOpen and successful positioning</p>
+<p>NTP: NTP is a network protocol used to synchronize computer clocks on the Internet. It allows devices to
+synchronize its time with that of NTP servers. The prerequisite for obtaining this time is that the device
+can access the Internet. When performing NTP time synchronization, it will access the Internet and
+generate a little amount of traffic.</p>
+<p>The module contains a hardware RTC (device file /dev/rtc0). Power will not be supplied to
+RTC separately. When the module is powered off, it can continue to work for a short time (Its power was
+supplied by an external capacitor. The working time depends on the capacitor capacity and usually it will
+last less than one minute time. When the capacitor capacity is exhausted, the RTC will reset). Both
+system soft restart and hard restart can ensure that RTC continues to work. The RTC is a restricted RTC
+and it should not be manipulated.</p>
+<section id="set-the-time-manually">
+<h2>Set the time manually<a class="headerlink" href="#set-the-time-manually" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">volatile</span><span class="o">/</span><span class="n">tmp</span> <span class="c1"># echo &quot;user: 1514768470000&quot; &gt; ql_time_set_pipe</span>
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">volatile</span><span class="o">/</span><span class="n">tmp</span> <span class="c1"># date</span>
+<span class="n">Mon</span> <span class="n">Jan</span>  <span class="mi">1</span> <span class="mi">09</span><span class="p">:</span><span class="mi">01</span><span class="p">:</span><span class="mi">12</span> <span class="n">CST</span> <span class="mi">2018</span>
+</pre></div>
+</div>
+</section>
+<section id="set-the-time-via-ntp">
+<h2>Set the time via NTP<a class="headerlink" href="#set-the-time-via-ntp" title="Link to this heading"></a></h2>
+<p>/etc/ql_time_conf.json</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+        <span class="s2">&quot;sync_accuracy_ms&quot;</span><span class="p">:</span><span class="mi">2000</span><span class="p">,</span>
+        <span class="s2">&quot;modem_sync_enable&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="o">//</span> <span class="n">NITZ</span> <span class="n">time</span> <span class="kn">from</span> <span class="nn">modem</span>
+        <span class="s2">&quot;gnss_sync_enable&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>  <span class="o">//</span> <span class="n">UTC</span> <span class="n">time</span> <span class="kn">from</span> <span class="nn">GNSS</span>
+        <span class="s2">&quot;ntp_sync_policy&quot;</span><span class="p">:</span><span class="s2">&quot;assist&quot;</span><span class="p">,</span> <span class="o">//</span> <span class="n">valid</span> <span class="n">policy</span><span class="p">:</span> <span class="n">assist</span><span class="p">,</span> <span class="n">normal</span>
+        <span class="s2">&quot;ntp_server_probe_interval_ms&quot;</span><span class="p">:</span><span class="mi">2000</span><span class="p">,</span>
+        <span class="s2">&quot;ntp_server_probe_retry_count&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span>
+        <span class="s2">&quot;ntp_failed_retry_interval_s&quot;</span><span class="p">:</span><span class="mi">300</span><span class="p">,</span>
+        <span class="s2">&quot;ntp_resync_interval_s&quot;</span><span class="p">:</span><span class="mi">86400</span><span class="p">,</span> <span class="o">//</span> <span class="n">one</span> <span class="n">day</span>
+        <span class="s2">&quot;ntp_server_list&quot;</span> <span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;pool.ntp.org&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;0.pool.ntp.org&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;1.pool.ntp.org&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;cn.ntp.org.cn&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;cn.pool.ntp.org&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;us.ntp.org.cn&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;de.ntp.org.cn&quot;</span>
+        <span class="p">]</span>
+    <span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="time-zone">
+<h2>Time Zone<a class="headerlink" href="#time-zone" title="Link to this heading"></a></h2>
+<p>Timezone is set according to the GLIBC. So the timezone is set in /etc/localtime by default.</p>
+<p>Copy the timezone file, eg, /usr/share/zoneinfo/Asia/Shanghai, from the Ubuntu to the device /etc/localtime.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Linux Applications" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="json-xml.html" class="btn btn-neutral float-right" title="JSON-XML" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, biaowang.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

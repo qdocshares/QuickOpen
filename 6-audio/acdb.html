@@ -1,0 +1,161 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ACDB &mdash; QuickOpen 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Power Support" href="../7-power/index.html" />
+    <link rel="prev" title="PCM interface" href="pcm.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            QuickOpen
+              <img src="../_static/quectel-logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../1-quickstart/index.html">Quick Start</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../2-Platform-Stability/index.html">Platform Support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../3-Network-Management/index.html">Network Management Support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../4-Peripheral-Interface/index.html">Peripheral Device Support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../5-usb/index.html">Usb Support</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Audio Support</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="pcm.html">PCM interface</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">ACDB</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#import-acdb">import ACDB</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../7-power/index.html">Power Support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../8-linux-apps/index.html">Linux Applications</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../android/index.html">Android Support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../features/index.html">Extended Features</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">QuickOpen</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Audio Support</a></li>
+      <li class="breadcrumb-item active">ACDB</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/6-audio/acdb.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="acdb">
+<h1>ACDB<a class="headerlink" href="#acdb" title="Link to this heading"></a></h1>
+<p>ACDB (Audio Calibration Database)</p>
+<p>ACDB is used to adjust ADSP audio parameters. As shown in the figure below, there are currently 7 ACDB
+files available for use. The workspaceFile.qwsp shown below is a project file for the QACT tool to open the
+ACDB files.</p>
+<p>QACT, a kind of audio parameters adjustment tool provided by Qualcomm, is used to calibrate ACDB.
+ACDB files are loaded into memory in the process of alsaucm_test. If the process is not enabled, online
+calibration mode cannot be used on QACT tool.</p>
+<section id="import-acdb">
+<h2>import ACDB<a class="headerlink" href="#import-acdb" title="Link to this heading"></a></h2>
+<p>Copy the SDK to Linux and execute the following command to unzip the SDK.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>unzip sudo tar -jxvf EC20CETFDKR05A03V01M2G_OCPU_DJJ_SDK.tar.bz2
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="pcm.html" class="btn btn-neutral float-left" title="PCM interface" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../7-power/index.html" class="btn btn-neutral float-right" title="Power Support" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, biaowang.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

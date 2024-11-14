@@ -1,0 +1,219 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EC2x Overview &mdash; QuickOpen 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="How to Compile" href="how-to-compile.html" />
+    <link rel="prev" title="Quick Start" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            QuickOpen
+              <img src="../_static/quectel-logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Quick Start</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">EC2x Overview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#quectel-module">Quectel module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#software-framework">Software Framework</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#platform-info">Platform Info</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hardware-overview">Hardware Overview</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="how-to-compile.html">How to Compile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="how-to-flash.html">How to Flash</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html">Quectel EXTSDK Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="device_tree.html">Device Tree</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../2-Platform-Stability/index.html">Platform Support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../3-Network-Management/index.html">Network Management Support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../4-Peripheral-Interface/index.html">Peripheral Device Support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../5-usb/index.html">Usb Support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../6-audio/index.html">Audio Support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../7-power/index.html">Power Support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../8-linux-apps/index.html">Linux Applications</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../android/index.html">Android Support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../features/index.html">Extended Features</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">QuickOpen</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Quick Start</a></li>
+      <li class="breadcrumb-item active">EC2x Overview</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/1-quickstart/overview.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="ec2x-overview">
+<h1>EC2x Overview<a class="headerlink" href="#ec2x-overview" title="Link to this heading"></a></h1>
+<p>Quectel EC2X is based Qualcomm MDM9x07 Chip.
+CPU &amp; O.S</p>
+<p>ARMv7 Cortex A7 up to 1.2GHz with 256KB L2 cache.
+(Performance: 2280 DMIPS &#64;1.2GHz, 1.9 DMIPS/MHz).</p>
+<p>Linux distribution with kernel 3.18.</p>
+<section id="quectel-module">
+<h2>Quectel module<a class="headerlink" href="#quectel-module" title="Link to this heading"></a></h2>
+<p><img alt="" src="../_images/Quectel_Modules.png" /></p>
+</section>
+<section id="software-framework">
+<h2>Software Framework<a class="headerlink" href="#software-framework" title="Link to this heading"></a></h2>
+<p><img alt="" src="../_images/quectel_overview.png" /></p>
+<p><img alt="" src="../_images/peripheral_devices.png" /></p>
+</section>
+<section id="platform-info">
+<h2>Platform Info<a class="headerlink" href="#platform-info" title="Link to this heading"></a></h2>
+<p>The memory and flash size</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>ROM</p></th>
+<th class="head"><p>RAM</p></th>
+<th class="head"><p>/bit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>4G</p></td>
+<td><p>512MB</p></td>
+<td><p>256MB</p></td>
+<td><p>4+2</p></td>
+</tr>
+<tr class="row-odd"><td><p>2G</p></td>
+<td><p>256MB</p></td>
+<td><p>256MB</p></td>
+<td><p>2+2</p></td>
+</tr>
+<tr class="row-even"><td><p>1G</p></td>
+<td><p>128MB</p></td>
+<td><p>128MB</p></td>
+<td><p>1+1</p></td>
+</tr>
+</tbody>
+</table>
+<p>FC20 is based on Qualcomm QCA102.</p>
+</section>
+<section id="hardware-overview">
+<h2>Hardware Overview<a class="headerlink" href="#hardware-overview" title="Link to this heading"></a></h2>
+<p>EC2x 支持SPI/I2C/Uart,Audio PCM/I2S接口、USB、SDIO、SIM卡、SGMII。详细需要查阅Hardware-Design.
+模组的硬件资源</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>USB
+SGMII
+USIM
+SDIO/SDC
+WLAN
+UART
+SPI/I2C
+PCM/I2S
+</pre></div>
+</div>
+<p>硬件请参考</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Quectel_EC21-QuecOpen_Hardware_Design_V1.0.pdf
+</pre></div>
+</div>
+<p>如果使用移远的EVB，需要拿到对应EVB和TE-A的原理图。</p>
+<p>移远的EC2x可以用在UMTS&amp;LTE-EVB或者LTE OPEN-EVB上。</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Quick Start" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="how-to-compile.html" class="btn btn-neutral float-right" title="How to Compile" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, biaowang.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

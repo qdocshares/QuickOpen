@@ -1,0 +1,291 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PCM interface &mdash; QuickOpen 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ACDB" href="acdb.html" />
+    <link rel="prev" title="Audio Support" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            QuickOpen
+              <img src="../_static/quectel-logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../1-quickstart/index.html">Quick Start</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../2-Platform-Stability/index.html">Platform Support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../3-Network-Management/index.html">Network Management Support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../4-Peripheral-Interface/index.html">Peripheral Device Support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../5-usb/index.html">Usb Support</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Audio Support</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">PCM interface</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">PCM interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pcm-reference-design">PCM reference design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#codec-supported">CodeC Supported</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="acdb.html">ACDB</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../7-power/index.html">Power Support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../8-linux-apps/index.html">Linux Applications</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../android/index.html">Android Support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../features/index.html">Extended Features</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">QuickOpen</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Audio Support</a></li>
+      <li class="breadcrumb-item active">PCM interface</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/6-audio/pcm.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="pcm-interface">
+<h1>PCM interface<a class="headerlink" href="#pcm-interface" title="Link to this heading"></a></h1>
+<section id="id1">
+<h2>PCM interface<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<p>There are two PCM interface.</p>
+<p>But the primary PCM is set to SPI mode by default.</p>
+<p>Primary PCM</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>PinName</p></th>
+<th class="head"><p>PIN Num</p></th>
+<th class="head"><p>default Function</p></th>
+<th class="head"><p>Function1</p></th>
+<th class="head"><p>Function2</p></th>
+<th class="head"><p>Function3</p></th>
+<th class="head"><p>Function4</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>SPI_CS_N</p></td>
+<td><p>37</p></td>
+<td><p>SPI_CS_N_BLSP6</p></td>
+<td><p>PCM_IN</p></td>
+<td><p>I2S_IN</p></td>
+<td><p>GPIO22</p></td>
+<td><p>UART_RTS_BLSP6</p></td>
+</tr>
+<tr class="row-odd"><td><p>SPI_CS_N</p></td>
+<td><p>38</p></td>
+<td><p>SPI_MOSI_BLSP6</p></td>
+<td><p>PCM_OUT</p></td>
+<td><p>I2S_OUT</p></td>
+<td><p>GPIO20</p></td>
+<td><p>UART_TXD_BLSP6</p></td>
+</tr>
+<tr class="row-even"><td><p>SPI_CS_N</p></td>
+<td><p>39</p></td>
+<td><p>SPI_MISO_BLSP6</p></td>
+<td><p>PCM_SYNC</p></td>
+<td><p>I2S_WS</p></td>
+<td><p>GPIO21</p></td>
+<td><p>UART_RXD_BLSP6</p></td>
+</tr>
+<tr class="row-odd"><td><p>SPI_CS_N</p></td>
+<td><p>40</p></td>
+<td><p>SPI_CLK_BLSP6</p></td>
+<td><p>PCM_CLK</p></td>
+<td><p>I2S_CLK</p></td>
+<td><p>GPIO23</p></td>
+<td><p>UART_CTS_BLSP6</p></td>
+</tr>
+</tbody>
+</table>
+<p>Secondary PCM</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>PinName</p></th>
+<th class="head"><p>PIN Num</p></th>
+<th class="head"><p>defaultFunction</p></th>
+<th class="head"><p>Function1</p></th>
+<th class="head"><p>Function2</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>PCM_IN</p></td>
+<td><p>24</p></td>
+<td><p>PCM_IN</p></td>
+<td><p>I2S_IN</p></td>
+<td><p>GPIO76</p></td>
+</tr>
+<tr class="row-odd"><td><p>PCM_OUT</p></td>
+<td><p>25</p></td>
+<td><p>PCM_OUT</p></td>
+<td><p>I2S_OUT</p></td>
+<td><p>GPIO77</p></td>
+</tr>
+<tr class="row-even"><td><p>PCM_SYNC</p></td>
+<td><p>26</p></td>
+<td><p>PCM_SYNC</p></td>
+<td><p>I2S_WS</p></td>
+<td><p>GPIO79</p></td>
+</tr>
+<tr class="row-odd"><td><p>PCM_CLK</p></td>
+<td><p>27</p></td>
+<td><p>PCM_CLK</p></td>
+<td><p>I2S_CLK</p></td>
+<td><p>GPIO78</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="pcm-reference-design">
+<h2>PCM reference design<a class="headerlink" href="#pcm-reference-design" title="Link to this heading"></a></h2>
+<p><img alt="" src="../_images/pcm_reference_design.png" /></p>
+</section>
+<section id="codec-supported">
+<h2>CodeC Supported<a class="headerlink" href="#codec-supported" title="Link to this heading"></a></h2>
+<p>The CodeC have tried</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>QDAI</p></th>
+<th class="head"><p>CodeC</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>Digital PCM out</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>NAU8814</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>ACL5616</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>MAX9860</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>TLV320ALC3104</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>NAU88C10/NAU88U10</p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td><p>MAX9867</p></td>
+</tr>
+<tr class="row-odd"><td><p>8</p></td>
+<td><p>ALC5660</p></td>
+</tr>
+<tr class="row-even"><td><p>9</p></td>
+<td><p>ALC5616E</p></td>
+</tr>
+<tr class="row-odd"><td><p>10</p></td>
+<td><p>ES8311</p></td>
+</tr>
+<tr class="row-even"><td><p>11</p></td>
+<td><p>ES8374</p></td>
+</tr>
+<tr class="row-odd"><td><p>12</p></td>
+<td><p>ES838</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Audio Support" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="acdb.html" class="btn btn-neutral float-right" title="ACDB" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, biaowang.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

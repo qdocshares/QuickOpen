@@ -1,0 +1,274 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About PPP &mdash; QuickOpen 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="quectel-CM" href="MoreAboutCM.html" />
+    <link rel="prev" title="Usbnet DataCall" href="DialUp.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            QuickOpen
+              <img src="../_static/quectel-logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../1-quickstart/index.html">Quick Start</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../2-Platform-Stability/index.html">Platform Support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../3-Network-Management/index.html">Network Management Support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../4-Peripheral-Interface/index.html">Peripheral Device Support</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Usb Support</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="USB.html">USB Driver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="UsbNet.html">UsbNet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="UsbNet.html#rmnet">RMNET</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DialUp.html">Usbnet DataCall</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">About PPP</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ppp-kernel-configuration">PPP kernel configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-get-the-pppd">How to get the PPPD</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#debian-ubuntu-os">Debian/Ubuntu OS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cross-compile-the-pppd">cross compile the pppd</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#wvdial">wvdial</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#modem-hangup">modem hangup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#the-difference-between-sigint-sigterm-sighup">the difference between SIGINT,SIGTERM,SIGHUP</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="MoreAboutCM.html">quectel-CM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="UsbSerial.html">UsbSerial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="adb.html">ADB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usb_mode.html">USB mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usbmon.html">usbmon</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../6-audio/index.html">Audio Support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../7-power/index.html">Power Support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../8-linux-apps/index.html">Linux Applications</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../android/index.html">Android Support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../features/index.html">Extended Features</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">QuickOpen</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Usb Support</a></li>
+      <li class="breadcrumb-item active">About PPP</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/5-usb/ppp.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="about-ppp">
+<h1>About PPP<a class="headerlink" href="#about-ppp" title="Link to this heading"></a></h1>
+<p>ppp won’t occupy an USB interface descriptor.</p>
+<p>ppp is one way the modules to set up data call on the data link layer. Normally the modules will use the USB interface 3 (you can call it ttyPPP port, or ttyModem port, it will be shown as a modem in the devmgmt on Windows OS.) to start a ppp connection.</p>
+<p>Point - to - Point Protocol (PPP) is a communication protocol of the data link layer that is used to transmit multiprotocol data between two directly connected (point-to-point) computers. It is a byte - oriented protocol that is widely used in broadband communications having heavy loads and high speeds. Since it is a data link layer protocol, data is transmitted in frames. It is also known as RFC 1661.</p>
+<section id="ppp-kernel-configuration">
+<h2>PPP kernel configuration<a class="headerlink" href="#ppp-kernel-configuration" title="Link to this heading"></a></h2>
+<p>You should enable the</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>CONFIG_PPP_DEFLATE=y
+CONFIG_PPP_FILTER=y
+CONFIG_PPP_MULTILINK=y
+CONFIG_PPP_ASYNC=y
+CONFIG_PPP_SYNC_TTY=y
+</pre></div>
+</div>
+<p>Then please check whether /dev/ppp exists.</p>
+</section>
+<section id="how-to-get-the-pppd">
+<h2>How to get the PPPD<a class="headerlink" href="#how-to-get-the-pppd" title="Link to this heading"></a></h2>
+<p>You need the pppd and the chat.</p>
+<section id="debian-ubuntu-os">
+<h3>Debian/Ubuntu OS<a class="headerlink" href="#debian-ubuntu-os" title="Link to this heading"></a></h3>
+<p>Debian System</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>sudo apt-get install ppp
+
+
+
+quectel-pppd.sh
+
+
+copy the quectel-chat-connect quectel-chat-disconnect quectel-ppp to /etc/ppp/peers
+modify the quectel-ppp and quectel-chat-connect
+execute &quot;pppd call quectel-ppp &amp;&quot;
+</pre></div>
+</div>
+</section>
+<section id="cross-compile-the-pppd">
+<h3>cross compile the pppd<a class="headerlink" href="#cross-compile-the-pppd" title="Link to this heading"></a></h3>
+<p>follow the <a class="reference external" href="http://www.linuxfromscratch.org/blfs/view/6.3/basicnet/ppp.html">http://www.linuxfromscratch.org/blfs/view/6.3/basicnet/ppp.html</a></p>
+<p>pppd</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>https://ppp.samba.org/download.html
+http://samba.org/ftp/ppp/ppp-2.4.4.tar.gz
+</pre></div>
+</div>
+<p>pppd is based on libcap.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>libpcap-0.9.6 ---&gt; do PPP filtering
+Linux-PAM-0.99.10.0 ---&gt; authenticate incoming calls using PAM
+Linux ATM ---&gt; pppoatm.so 
+</pre></div>
+</div>
+<p>PPP support (CONFIG_PPP), the asynchronous line discipline (CONFIG_PPP_ASYNC), the driver for your serial port device and/or the PPP over Ethernet (PPPoE) protocol driver (CONGIG_PPPOE) must be compiled into the kernel or loaded as kernel modules. Udev doesn’t load the ppp_generic and pppoe modules automatically, they must be mentioned in the /etc/sysconfig/modules file.</p>
+<p><a class="reference external" href="http://www.linuxfromscratch.org/blfs/view/6.3/basicnet/ppp.html">reference ppp</a></p>
+</section>
+<section id="wvdial">
+<h3>wvdial<a class="headerlink" href="#wvdial" title="Link to this heading"></a></h3>
+<p>wvdial</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">Exit</span> <span class="n">status</span> <span class="n">values</span><span class="o">.</span>
+	<span class="c1">#define EXIT_OK			0</span>
+	<span class="c1">#define EXIT_FATAL_ERROR	1</span>
+	<span class="c1">#define EXIT_OPTION_ERROR	2</span>
+	<span class="c1">#define EXIT_NOT_ROOT		3</span>
+	<span class="c1">#define EXIT_NO_KERNEL_SUPPORT	4</span>
+	<span class="c1">#define EXIT_USER_REQUEST	5</span>
+	<span class="c1">#define EXIT_LOCK_FAILED	6</span>
+	<span class="c1">#define EXIT_OPEN_FAILED	7</span>
+	<span class="c1">#define EXIT_CONNECT_FAILED	8</span>
+	<span class="c1">#define EXIT_PTYCMD_FAILED	9</span>
+	<span class="c1">#define EXIT_NEGOTIATION_FAILED	10</span>
+	<span class="c1">#define EXIT_PEER_AUTH_FAILED	11</span>
+	<span class="c1">#define EXIT_IDLE_TIMEOUT	12</span>
+	<span class="c1">#define EXIT_CONNECT_TIME	13</span>
+	<span class="c1">#define EXIT_CALLBACK		14</span>
+	<span class="c1">#define EXIT_PEER_DEAD		15</span>
+	<span class="c1">#define EXIT_HANGUP		16</span>
+	<span class="c1">#define EXIT_LOOPBACK		17</span>
+	<span class="c1">#define EXIT_INIT_FAILED	18</span>
+	<span class="c1">#define EXIT_AUTH_TOPEER_FAILED	19</span>
+	<span class="c1">#ifdef MAXOCTETS</span>
+	<span class="c1">#define EXIT_TRAFFIC_LIMIT	20</span>
+	<span class="c1">#endif</span>
+	<span class="c1">#define	 EXIT_CNID_AUTH_FAILED	21</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="http://androidos.net.cn/android/9.0.0_r8/xref/external/ppp/pppd/pppd.h">pppd.h</a></p>
+</section>
+<section id="modem-hangup">
+<h3>modem hangup<a class="headerlink" href="#modem-hangup" title="Link to this heading"></a></h3>
+<p>It’s not easy to judge the reason of exit_Hangup.</p>
+<p>Sometime it is bug of the module.</p>
+<p>Quectel need the modem log to analyze the root cause.</p>
+<p>There is a application scenarios we will catch the modem hangup.</p>
+<p>The first time the ppp dial up OK. And once we shutdown the pppd process, we can not dial up again. We need to reset the module at that time.</p>
+<p>I conclude those attention:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>1. Kill the prorcess by &quot;killall pppd&quot; works fine, but &quot;kill -9 ${PID}&quot; will not.
+
+2. killall will show 
+</pre></div>
+</div>
+<p><img alt="" src="../_images/pppdkillall.png" /></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>and you&#39;ll see the ppp end up normally.
+
+3.kill -9 ${PID} you can see nothing about how the pppd process ends up.
+</pre></div>
+</div>
+</section>
+<section id="the-difference-between-sigint-sigterm-sighup">
+<h3>the difference between SIGINT,SIGTERM,SIGHUP<a class="headerlink" href="#the-difference-between-sigint-sigterm-sighup" title="Link to this heading"></a></h3>
+<p>to be done..</p>
+<p>waiting …</p>
+<p>More about PPP protocol</p>
+<p><a class="reference external" href="http://cs.indstate.edu/~vkota1/main.pdf">Point to Point Protocol(PPP) by vkota1.&#64;sycamores.indstate.edu</a></p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="DialUp.html" class="btn btn-neutral float-left" title="Usbnet DataCall" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="MoreAboutCM.html" class="btn btn-neutral float-right" title="quectel-CM" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, biaowang.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,504 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>quectel-CM &mdash; QuickOpen 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="UsbSerial" href="UsbSerial.html" />
+    <link rel="prev" title="About PPP" href="ppp.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            QuickOpen
+              <img src="../_static/quectel-logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../1-quickstart/index.html">Quick Start</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../2-Platform-Stability/index.html">Platform Support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../3-Network-Management/index.html">Network Management Support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../4-Peripheral-Interface/index.html">Peripheral Device Support</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Usb Support</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="USB.html">USB Driver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="UsbNet.html">UsbNet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="UsbNet.html#rmnet">RMNET</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DialUp.html">Usbnet DataCall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ppp.html">About PPP</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">quectel-CM</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#prerequisites">prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#build-and-copy-to-target-platform">Build and Copy to Target Platform</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#run-cm">Run CM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#qmi-driver">QMI Driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gobinet">GobiNet</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#mbim">MBIM</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#udhcpc">udhcpc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#common-issue">COMMON Issue</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="UsbSerial.html">UsbSerial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="adb.html">ADB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usb_mode.html">USB mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usbmon.html">usbmon</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../6-audio/index.html">Audio Support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../7-power/index.html">Power Support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../8-linux-apps/index.html">Linux Applications</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../android/index.html">Android Support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../features/index.html">Extended Features</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">QuickOpen</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Usb Support</a></li>
+      <li class="breadcrumb-item active">quectel-CM</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/5-usb/MoreAboutCM.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="quectel-cm">
+<h1>quectel-CM<a class="headerlink" href="#quectel-cm" title="Link to this heading"></a></h1>
+<p>Quectel Connect Manager is also called quectel-CM, hereinafter referred to as CM.
+In the following text, Quectel Connect Manager, quectel-CM and CM refer to the same thing.
+The CM version used by 5G modules (RM500Q and RG500Q) uses the latest version (1.6.0.16).
+It is recommended to use the latest version of CM tool for 4G modules (EC2X).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">title</span><span class="p">:</span> <span class="n">the</span> <span class="n">QMI</span> <span class="n">between</span> <span class="n">modules</span> <span class="ow">and</span> <span class="n">the</span> <span class="n">Host</span> <span class="n">AP</span>
+<span class="n">participant</span> <span class="n">HostAP</span>
+<span class="n">participant</span> <span class="n">QuectelModules</span>
+
+<span class="n">HostAP</span> <span class="o">-&gt;</span> <span class="n">QuectelModules</span><span class="p">:</span> <span class="n">QMICTL_SYNC_REQ</span>
+<span class="n">QuectelModules</span><span class="o">-&gt;</span><span class="n">HostAP</span><span class="p">:</span> <span class="n">QMICTL_SYNC_RESP</span>
+<span class="n">HostAP</span><span class="o">-&gt;</span><span class="n">QuectelModule</span> <span class="p">:</span> <span class="o">...</span>
+<span class="n">QuectelModules</span><span class="o">-&gt;</span><span class="n">HostAP</span><span class="p">:</span> <span class="o">...</span>
+<span class="n">HostAP</span><span class="o">-&gt;</span><span class="n">QuectelModules</span><span class="p">:</span> <span class="n">QMIWDS_GET_PKT_SRVC_STATUS_REQ</span>
+<span class="n">QuectelModules</span><span class="o">-&gt;</span><span class="n">HostAP</span><span class="p">:</span> <span class="n">QMIWDS_GET_PKT_SRVC_STATUS</span> <span class="n">_RESP</span>
+</pre></div>
+</div>
+<p>detailed please refer to
+<a class="reference external" href="https://knowledge.quectel.com/display/FAEinternalsharing/01-2020.02.11-driver-kba-20190602_guide_to_use_qmap">kba-20190602_guide_to_use_qmap</a></p>
+<p>This doc can be accessed by the Quectel.</p>
+<section id="prerequisites">
+<h2>prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Network status check
+<br>
+Confirm that the module is registered on the 4G or 5G network. Use AT command to check</p></li>
+</ul>
+<p>/[]AT+COPS?
+[]AT+QENG=servingcell</p>
+<ul class="simple">
+<li><p>dhcp client program
+<br>
+The PC or server system comes with dhclient,
+and the embedded platform uses udhcpc, one of the busybox tools.</p></li>
+<li><p>Network card driver
+<br>
+CM is used for RMNET network card (AT+QCFG=usbnet, 0), corresponding to driver qmi_wwan_q or GobiNet;
+and MBIM network card (AT+QCFG=usbnet, 2), corresponding to driver cdc_mbim.</p></li>
+</ul>
+</section>
+<section id="build-and-copy-to-target-platform">
+<h2>Build and Copy to Target Platform<a class="headerlink" href="#build-and-copy-to-target-platform" title="Link to this heading"></a></h2>
+<p>If you use make directly on the current system, cross-compile the source code for the embedded platform. Finally generate the target file</p>
+<ul class="simple">
+<li><p><strong>quectel-CM</strong>: target executable file</p></li>
+<li><p><strong>qmi-proxy</strong> and <strong>mbim-proxy</strong>: proxy tools for multi-way dialing. If multi-way dialing is not needed, ignore them.</p></li>
+</ul>
+<p>Notes:<br>
+Gcc version is lower (lower than 4.6), add -lrt to CFLAGS.</p>
+<p>Copy the three compiled target files to the target platform. If it is an embedded platform, copy the default.script in the quectel-CM source code to the target platform.</p>
+<p>Notes:<br></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>default.script is an important script called by udhcpc.
+The default script cannot contain invisible characters. For example, if it is opened in DOS system (Win10), each line will end with \r\n, which will cause it to fail to execute normally in Unix system.
+Execute dos2unix default.script on the target platform
+dos2unix is a small tool that converts DOS system characters to Unix system characters.
+You can also use vim to open default.script and manually delete the ^M at the end of each line of default.script.
+default.script has execution permission. chmod +x default.script.
+The default location of default.script is generally /etc/udhcpc/ or /usr/share/udhcpc/
+CM dial-up uses busybox udhcpc by default (see udhcpc.c in the CM source code directory for details). For embedded systems, udhcpc needs to be checked when compiling busybox or buildroot, otherwise it needs to be ported additionally.
+If you use Dhclient, you need to turn it on. #define USE_DHCLIENT.
+</pre></div>
+</div>
+</section>
+<section id="run-cm">
+<h2>Run CM<a class="headerlink" href="#run-cm" title="Link to this heading"></a></h2>
+<p>quectel-CM supports various dialing requirements such as multi-channel dialing, log storage, multiple modules, and specified APN information.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>root@m:/home/m/quectel-CM# ./quectel-CM --help
+Quectel_QConnectManager_Linux_V1.6.0.16
+Usage: ./quectel-CM [options]
+-s [apn [user password auth]]                                          Set apn/user/password/auth
+-p pincode                                                 Verify sim card pin if sim card is locked
+-f logfilename                                             Save log message of this program to file
+-u usbmonlog filename                                     Save usbmon log of this program to file
+-i interface                                           Specify network interface(default auto-detect)
+-4                                                                               IPv4 protocol
+-6                                                                               IPv6 protocol
+-m muxID                                       Specify muxid when set multi-pdn data connection.
+-n channelID                       Specify channelID when set multi-pdn data connection(default 1).
+-k channelID                              Send SIGINT to quectel-CM which multi-pdn is channelID.
+-r                                             Detach and attach kernel driver before open device.
+-b                                              enable network interface bridge function(default 0).
+[Examples]
+Example 1: ./quectel-CM
+Example 2: ./quectel-CM -s 3gnet
+Example 3: ./quectel-CM -s 3gnet carl 1234 0 -p 1234 -f gobinet_log.txt
+</pre></div>
+</div>
+</section>
+<section id="qmi-driver">
+<h2>QMI Driver<a class="headerlink" href="#qmi-driver" title="Link to this heading"></a></h2>
+<p>Use AT commands to configure the module’s USB network card type to MBIM</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>AT+QCFG=usbnet，0
+</pre></div>
+</div>
+<p>After restarting the module, confirm</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>root@m:/home/m/quectel-CM# lsusb -t
+/:  Bus 02.Port 1: Dev 1, Class=root_hub, Driver=xhci_hcd/4p, 5000M
+/:  Bus 01.Port 1: Dev 1, Class=root_hub, Driver=xhci_hcd/11p, 480M
+    |__ Port 4: Dev 12, If 3, Class=Vendor Specific Class, Driver=option, 480M
+    |__ Port 4: Dev 12, If 1, Class=Vendor Specific Class, Driver=option, 480M
+    |__ Port 4: Dev 12, If 4, Class=Vendor Specific Class, Driver=qmi_wwan_q, 480M
+    |__ Port 4: Dev 12, If 2, Class=Vendor Specific Class, Driver=option, 480M
+|__ Port 4: Dev 12, If 0, Class=Vendor Specific Class, Driver=option, 480M
+</pre></div>
+</div>
+<p>Run quectel-CM to start dialing</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[11-30_17:26:14:656] Quectel_QConnectManager_Linux_V1.6.0.16
+[qmidevice_detect]/sys/bus/usb/devices/1-4/idProduct
+[11-30_17:26:14:657] Find /sys/bus/usb/devices/1-4 idVendor=0x2c7c idProduct=0x125, bus=0x001, dev=0x00d
+[11-30_17:26:14:657] Auto find qmichannel = /dev/cdc-wdm0
+[11-30_17:26:14:657] Auto find usbnet_adapter = wwan0
+[11-30_17:26:14:657] netcard driver = qmi_wwan_q, driver version = V1.2.0.14
+[11-30_17:26:14:657] ioctl(0x89f3, qmap_settings) failed: Operation not supported, rc=-1
+[11-30_17:26:14:658] qmap_mode = 1, qmap_version = 5, qmap_size = 4096, muxid = 0x81, qmap_netcard = wwan0
+[11-30_17:26:14:658] Modem works in QMI mode
+[11-30_17:26:14:669] cdc_wdm_fd = 7
+[11-30_17:26:15:670] QmiThreadSendQMITimeout pthread_cond_timeout_np timeout
+[11-30_17:26:16:755] Get clientWDS = 18
+[11-30_17:26:16:787] Get clientDMS = 1
+[11-30_17:26:16:819] Get clientNAS = 3
+[11-30_17:26:16:852] Get clientUIM = 1
+[11-30_17:26:16:883] Get clientWDA = 1
+[11-30_17:26:16:915] requestBaseBandVersion EC20CEHCLGR06A03M1G
+[11-30_17:26:16:947] qmap_settings.rx_urb_size = 4096
+[11-30_17:26:16:947] qmap_settings.ul_data_aggregation_max_datagrams  = 11
+[11-30_17:26:16:947] qmap_settings.ul_data_aggregation_max_size       = 4096
+[11-30_17:26:16:947] qmap_settings.dl_minimum_padding                 = 16
+[11-30_17:26:17:075] requestGetSIMStatus SIMStatus: SIM_READY
+[11-30_17:26:17:107] requestGetProfile[1] cmnet///0
+[11-30_17:26:17:139] requestRegistrationState2 MCC: 460, MNC: 0, PS: Attached, DataCap: LTE
+[11-30_17:26:17:172] requestQueryDataCall IPv4ConnectionStatus: DISCONNECTED
+[11-30_17:26:17:172] ifconfig wwan0 0.0.0.0
+[11-30_17:26:17:178] ifconfig wwan0 down
+[11-30_17:26:17:234] requestSetupDataCall WdsConnectionIPv4Handle: 0xe17f2560
+[11-30_17:26:17:364] ifconfig wwan0 up
+[11-30_17:26:17:369] busybox udhcpc -f -n -q -t 5 -i wwan0
+udhcpc: started, v1.30.1
+udhcpc: sending discover
+udhcpc: sending select for 10.199.162.152
+udhcpc: lease of 10.199.162.152 obtained, lease time 7200
+[11-30_17:26:17:504] /etc/udhcpc/default.script: Resetting default routes
+[11-30_17:26:17:509] /etc/udhcpc/default.script: Adding DNS 211.138.180.2
+[11-30_17:26:17:509] /etc/udhcpc/default.script: Adding DNS 211.138.180.3
+</pre></div>
+</div>
+</section>
+<section id="gobinet">
+<h2>GobiNet<a class="headerlink" href="#gobinet" title="Link to this heading"></a></h2>
+<ul>
+<li><p>Confirm the driver</p>
+<p>root&#64;m:/home/m/quectel-CM# lsusb -t
+/:  Bus 02.Port 1: Dev 1, Class=root_hub, Driver=xhci_hcd/4p, 5000M
+/:  Bus 01.Port 1: Dev 1, Class=root_hub, Driver=xhci_hcd/11p, 480M
+|__ Port 4: Dev 12, If 3, Class=Vendor Specific Class, Driver=option, 480M
+|__ Port 4: Dev 12, If 1, Class=Vendor Specific Class, Driver=option, 480M
+|__ Port 4: Dev 12, If 4, Class=Vendor Specific Class, Driver=GobiNet, 480M
+|__ Port 4: Dev 12, If 2, Class=Vendor Specific Class, Driver=option, 480M
+|__ Port 4: Dev 12, If 0, Class=Vendor Specific Class, Driver=option, 480M</p>
+</li>
+<li><p>Run the quectel-CM</p>
+<p>[11-30_17:31:09:638] Quectel_QConnectManager_Linux_V1.6.0.16
+[qmidevice_detect]/sys/bus/usb/devices/1-4/idProduct
+[11-30_17:31:09:639] Find /sys/bus/usb/devices/1-4 idVendor=0x2c7c idProduct=0x125, bus=0x001, dev=0x00e
+[11-30_17:31:09:639] Auto find qmichannel = /dev/qcqmi0
+[11-30_17:31:09:639] Auto find usbnet_adapter = usb0
+[11-30_17:31:09:639] netcard driver = GobiNet, driver version = V1.6.2.9
+[11-30_17:31:10:067] qmap_mode = 1, qmap_version = 5, qmap_size = 4096, muxid = 0x81, qmap_netcard = usb0
+[11-30_17:31:10:067] Modem works in QMI mode
+[11-30_17:31:10:099] Get clientWDS = 7
+[11-30_17:31:10:131] Get clientDMS = 8
+[11-30_17:31:10:163] Get clientNAS = 9
+[11-30_17:31:10:195] Get clientUIM = 10
+[11-30_17:31:10:227] requestBaseBandVersion EC20CEHCLGR06A03M1G
+[11-30_17:31:10:355] requestGetSIMStatus SIMStatus: SIM_READY
+[11-30_17:31:10:387] requestGetProfile[1] cmnet///0
+[11-30_17:31:10:419] requestRegistrationState2 MCC: 460, MNC: 0, PS: Attached, DataCap: LTE
+[11-30_17:31:10:450] requestQueryDataCall IPv4ConnectionStatus: DISCONNECTED
+[11-30_17:31:10:450] ifconfig usb0 0.0.0.0
+[11-30_17:31:10:455] ifconfig usb0 down
+[11-30_17:31:10:515] requestSetupDataCall WdsConnectionIPv4Handle: 0xe17f16c0
+[11-30_17:31:10:643] ifconfig usb0 up
+[11-30_17:31:10:650] busybox udhcpc -f -n -q -t 5 -i usb0
+udhcpc: started, v1.30.1
+udhcpc: sending discover
+udhcpc: sending select for 10.211.128.177
+udhcpc: lease of 10.211.128.177 obtained, lease time 7200
+[11-30_17:31:10:799] /etc/udhcpc/default.script: Resetting default routes
+[11-30_17:31:10:807] /etc/udhcpc/default.script: Adding DNS 211.138.180.2
+[11-30_17:31:10:807] /etc/udhcpc/default.script: Adding DNS 211.138.180.3</p>
+</li>
+</ul>
+<section id="mbim">
+<h3>MBIM<a class="headerlink" href="#mbim" title="Link to this heading"></a></h3>
+<p>Confirm that the driver configures the module’s USB network card type to MBIM through AT commands.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>AT+QCFG=usbnet，2
+</pre></div>
+</div>
+<p>After restarting the module, confirm</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>/:  Bus 01.Port 1: Dev 1, Class=root_hub, Driver=xhci_hcd/11p, 480M
+    |__ Port 4: Dev 11, If 3, Class=Vendor Specific Class, Driver=option, 480M
+    |__ Port 4: Dev 11, If 1, Class=Vendor Specific Class, Driver=option, 480M
+    |__ Port 4: Dev 11, If 4, Class=Communications, Driver=cdc_mbim, 480M
+    |__ Port 4: Dev 11, If 2, Class=Vendor Specific Class, Driver=option, 480M
+    |__ Port 4: Dev 11, If 0, Class=Vendor Specific Class, Driver=option, 480M
+|__ Port 4: Dev 11, If 5, Class=CDC Data, Driver=cdc_mbim, 480M
+</pre></div>
+</div>
+<p>Run the quectel-CM</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[11-30_16:56:42:350] Quectel_QConnectManager_Linux_V1.6.0.16
+[qmidevice_detect]/sys/bus/usb/devices/1-4/idProduct
+[11-30_16:56:42:351] Find /sys/bus/usb/devices/1-4 idVendor=0x2c7c idProduct=0x125, bus=0x001, dev=0x00b
+[11-30_16:56:42:352] Auto find qmichannel = /dev/cdc-wdm0
+[11-30_16:56:42:352] Auto find usbnet_adapter = wwan0
+[11-30_16:56:42:352] netcard driver = cdc_mbim, driver version = 22-Aug-2005
+[11-30_16:56:42:352] ioctl(0x89f3, qmap_settings) failed: Operation not supported, rc=-1
+[11-30_16:56:42:352] Modem works in MBIM mode
+[11-30_16:56:42:352] apn (null), user (null), passwd (null), auth 0
+[11-30_16:56:42:352] IP Proto MBIMContextIPTypeIPv4
+[11-30_16:56:42:352] mbim_read_thread is created
+sh: /sys/class/net/wwan0/mbim/link_state: 没有那个文件或目录
+[11-30_16:56:42:356] system(echo 0 &gt; /sys/class/net/wwan0/mbim/link_state)=256
+[11-30_16:56:42:361] system(ip address flush dev wwan0)=0
+[11-30_16:56:42:365] system(ip link set dev wwan0 down)=0
+[11-30_16:56:42:365] mbim_open_device()
+[11-30_16:56:42:552] mbim_device_caps_query()
+[11-30_16:56:42:584] DeviceId:     867394041355693
+[11-30_16:56:42:584] FirmwareInfo: EC20CEHCLGR06A03M1G
+[11-30_16:56:42:584] HardwareInfo: QUECTEL Mobile Broadband Modul
+[11-30_16:56:42:584] mbim_device_services_query()
+[11-30_16:56:42:616] mbim_set_radio_state( 1 )
+[11-30_16:56:42:647] HwRadioState: 1, SwRadioState: 1
+[11-30_16:56:42:647] mbim_subscriber_status_query()
+[11-30_16:56:42:712] SubscriberReadyState NotInitialized -&gt; Initialized
+[11-30_16:56:42:712] mbim_register_state_query()
+[11-30_16:56:42:744] RegisterState Unknown -&gt; Home
+[11-30_16:56:42:744] mbim_packet_service_query()
+[11-30_16:56:42:776] PacketServiceState Unknown -&gt; Attached
+[11-30_16:56:42:776] mbim_query_connect(sessionID=0)
+[11-30_16:56:42:808] ActivationState Unknown -&gt; Deactivated
+[11-30_16:56:42:808] mbim_set_connect(onoff=1, sessionID=0)
+[11-30_16:56:42:872] ActivationState Deactivated -&gt; Activated
+[11-30_16:56:42:872] mbim_ip_config(sessionID=0)
+[11-30_16:56:42:904] &lt; SessionId = 0
+[11-30_16:56:42:904] &lt; IPv4ConfigurationAvailable = 0xf
+[11-30_16:56:42:904] &lt; IPv6ConfigurationAvailable = 0x0
+[11-30_16:56:42:904] &lt; IPv4AddressCount = 0x1
+[11-30_16:56:42:904] &lt; IPv4AddressOffset = 0x3c
+[11-30_16:56:42:904] &lt; IPv6AddressCount = 0x0
+[11-30_16:56:42:904] &lt; IPv6AddressOffset = 0x0
+[11-30_16:56:42:904] &lt; IPv4 = 10.140.255.29/30
+[11-30_16:56:42:904] &lt; gw = 10.140.255.30
+[11-30_16:56:42:904] &lt; dns1 = 211.138.180.2
+[11-30_16:56:42:904] &lt; dns2 = 211.138.180.3
+[11-30_16:56:42:904] &lt; ipv4 mtu = 1500
+[11-30_16:56:42:908] system(echo 1 &gt; /sys/class/net/wwan0/mbim/link_state)=256
+[11-30_16:56:42:914] system(ip link set dev wwan0 up)=0
+[11-30_16:56:42:918] system(ip -4 address flush dev wwan0)=0
+[11-30_16:56:42:922] system(ip -4 address add 10.140.255.29/30 dev wwan0)=0
+[11-30_16:56:42:926] system(ip -4 route add default via 10.140.255.30 dev wwan0)=0
+[11-30_16:56:42:929] system(ip -4 link set dev wwan0 mtu 1500)=0
+</pre></div>
+</div>
+</section>
+</section>
+<section id="udhcpc">
+<h2>udhcpc<a class="headerlink" href="#udhcpc" title="Link to this heading"></a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>RESOLV_CONF=&quot;/etc/resolv.conf&quot;
+
+case $1 in
+    bound|renew)
+	[ -n &quot;$broadcast&quot; ] &amp;&amp; BROADCAST=&quot;broadcast $broadcast&quot;
+	[ -n &quot;$subnet&quot; ] &amp;&amp; NETMASK=&quot;netmask $subnet&quot;
+
+	/sbin/ifconfig $interface $ip $BROADCAST $NETMASK
+
+	if [ -n &quot;$router&quot; ]; then
+	    echo &quot;$0: Resetting default routes&quot;
+	    while /sbin/route del default gw 0.0.0.0 dev $interface; do :; done
+
+	    metric=0
+	    for i in $router; do
+		/sbin/route add default gw $i dev $interface metric $metric
+		metric=$(($metric + 1))
+	    done
+	fi
+
+	# Update resolver configuration file
+	R=&quot;&quot;
+	[ -n &quot;$domain&quot; ] &amp;&amp; R=&quot;domain $domain&quot;
+	for i in $dns; do
+	    echo &quot;$0: Adding DNS $i&quot;
+	    R=&quot;${R}nameserver $i&quot;
+	done
+
+	if [ -x /sbin/resolvconf ]; then
+	    echo -n &quot;$R&quot; | resolvconf -a &quot;${interface}.udhcpc&quot;
+	else
+	    echo -n &quot;$R&quot; &gt; &quot;$RESOLV_CONF&quot;
+	fi
+	;;
+
+    deconfig)
+	if [ -x /sbin/resolvconf ]; then
+	    resolvconf -d &quot;${interface}.udhcpc&quot;
+	fi
+	/sbin/ifconfig $interface 0.0.0.0
+	;;
+
+    leasefail)
+	echo &quot;$0: Lease failed: $message&quot;
+	;;
+
+    nak)
+	echo &quot;$0: Received a NAK: $message&quot;
+	;;
+
+    *)
+	echo &quot;$0: Unknown udhcpc command: $1&quot;;
+	exit 1;
+	;;
+esac
+</pre></div>
+</div>
+</section>
+<section id="common-issue">
+<h2>COMMON Issue<a class="headerlink" href="#common-issue" title="Link to this heading"></a></h2>
+<p>You will see log as follow:</p>
+<p><img alt="" src="../_images/CM1.jpg" /></p>
+<p>There will be no more log later.</p>
+<p>There are some things you should check:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>1.modemmanager
+
+2.There is a valid default.script for udhcpc
+	- It is /etc/udhcpc/default.script but not /usr/share/udhcpc/default.script
+	- The default.script has invisble characters. dos2unix default.script
+	- No execution permission. chmod +w default.script
+
+3.On Ubuntu/Centos PC, it&#39;s recommended and easier to use dhclient.
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ppp.html" class="btn btn-neutral float-left" title="About PPP" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="UsbSerial.html" class="btn btn-neutral float-right" title="UsbSerial" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, biaowang.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

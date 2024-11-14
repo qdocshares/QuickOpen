@@ -1,0 +1,299 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quectel APIs &mdash; QuickOpen 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Auto-startup_Service" href="Auto-startup_Service.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            QuickOpen
+              <img src="../_static/quectel-logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../1-quickstart/index.html">Quick Start</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../2-Platform-Stability/index.html">Platform Support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../3-Network-Management/index.html">Network Management Support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../4-Peripheral-Interface/index.html">Peripheral Device Support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../5-usb/index.html">Usb Support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../6-audio/index.html">Audio Support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../7-power/index.html">Power Support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../8-linux-apps/index.html">Linux Applications</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../android/index.html">Android Support</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Extended Features</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="UART_Forwarding.html">UART_Forwarding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Auto-startup_Service.html">Auto-startup_Service</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Quectel APIs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#device-management">device management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sms">SMS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gps">GPS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1"></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">QuickOpen</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Extended Features</a></li>
+      <li class="breadcrumb-item active">Quectel APIs</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/features/Quectel_API.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="quectel-apis">
+<h1>Quectel APIs<a class="headerlink" href="#quectel-apis" title="Link to this heading"></a></h1>
+<section id="device-management">
+<h2>device management<a class="headerlink" href="#device-management" title="Link to this heading"></a></h2>
+<p>ql_mcm_dm.h</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Functions</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>QL_MCM_DM_Client_Init()</p></td>
+<td><p>Initializes device management service.</p></td>
+</tr>
+<tr class="row-odd"><td><p>QL_MCM_DM_AddRxIndMsgHandler()</p></td>
+<td><p>Sets the callback function triggered after the airplane</p></td>
+</tr>
+<tr class="row-even"><td><p>mode is changed into another mode.</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>QL_MCM_DM_SetAirplaneModeChgInd()</p></td>
+<td><p>Sets the switch to trigger the execution of callback</p></td>
+</tr>
+<tr class="row-even"><td><p>function after the airplane mode changes.</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>QL_MCM_DM_GetAirplaneMode()</p></td>
+<td><p>Gets airplane mode of the module</p></td>
+</tr>
+<tr class="row-even"><td><p>QL_MCM_DM_SetAirplaneMode()</p></td>
+<td><p>Sets airplane mode of the module.</p></td>
+</tr>
+<tr class="row-odd"><td><p>QL_MCM_DM_Client_Deinit()</p></td>
+<td><p>De-initializes device management service.</p></td>
+</tr>
+<tr class="row-even"><td><p>QL_MCM_DM_GetSerialNumbers()</p></td>
+<td><p>Gets the IMEI and MEID information of the module.</p></td>
+</tr>
+<tr class="row-odd"><td><p>QL_MCM_DM_GetFirmware()</p></td>
+<td><p>Gets the firmware version information of the module.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="sms">
+<h2>SMS<a class="headerlink" href="#sms" title="Link to this heading"></a></h2>
+<p>ql_mcm_sms.h</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Functions</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>QL_SMS_Client_Init()</p></td>
+<td><p>Initializes SMS to obtain the handle.</p></td>
+</tr>
+<tr class="row-odd"><td><p>QL_SMS_Client_Deinit()</p></td>
+<td><p>Deregisters SMS.</p></td>
+</tr>
+<tr class="row-even"><td><p>QL_SMS_GetSmsCenterAddress()</p></td>
+<td><p>Gets the SMS center number and type.</p></td>
+</tr>
+<tr class="row-odd"><td><p>QL_SMS_SetSmsCenterAddress()</p></td>
+<td><p>Sets the SMS center number and type.</p></td>
+</tr>
+<tr class="row-even"><td><p>QL_SMS_Send_Sms()</p></td>
+<td><p>Sends a text message.</p></td>
+</tr>
+<tr class="row-odd"><td><p>QL_SMS_AddRxMsgHandler()</p></td>
+<td><p>Sets the callback function for text message receiving.</p></td>
+</tr>
+<tr class="row-even"><td><p>QL_SMS_Send_SmsPdu()</p></td>
+<td><p>Sends an SMS message in PDU mode.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="gps">
+<h2>GPS<a class="headerlink" href="#gps" title="Link to this heading"></a></h2>
+<p>ql_mcm_gps.h</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Functions</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>QL_LOC_Client_Init</p></td>
+<td><p>Initialize a GNSS client</p></td>
+</tr>
+<tr class="row-odd"><td><p>QL_LOC_Client_Deinit</p></td>
+<td><p>Deregister a GNSS client</p></td>
+</tr>
+<tr class="row-even"><td><p>QL_LOC_AddRxIndMsgHandler</p></td>
+<td><p>Register a callback function to process GNSS data</p></td>
+</tr>
+<tr class="row-odd"><td><p>QL_LOC_Set_Indications</p></td>
+<td><p>Set indications of callback data</p></td>
+</tr>
+<tr class="row-even"><td><p>QL_LOC_Start_Navigation</p></td>
+<td><p>Start GNSS</p></td>
+</tr>
+<tr class="row-odd"><td><p>QL_LOC_Stop_Navigation</p></td>
+<td><p>Stop GNSS</p></td>
+</tr>
+<tr class="row-even"><td><p>QL_LOC_Set_Position_Mode</p></td>
+<td><p>Set position configuration items</p></td>
+</tr>
+<tr class="row-odd"><td><p>QL_LOC_Get_Current_Location</p></td>
+<td><p>Get current location data</p></td>
+</tr>
+<tr class="row-even"><td><p>QL_LOC_Delete_Aiding_Data</p></td>
+<td><p>Delete GNSS auxiliary data</p></td>
+</tr>
+<tr class="row-odd"><td><p>QL_LOC_InjectTime</p></td>
+<td><p>Inject UTC time to GNSS</p></td>
+</tr>
+<tr class="row-even"><td><p>QL_LOC_InjectLocation</p></td>
+<td><p>Inject location data to GNSS</p></td>
+</tr>
+<tr class="row-odd"><td><p>QL_LOC_Xtra_InjectData</p></td>
+<td><p>Inject XTRA auxiliary data to GNSS</p></td>
+</tr>
+<tr class="row-even"><td><p>QL_LOC_Xtra_InjectFile</p></td>
+<td><p>Inject XTRA file to GNSS</p></td>
+</tr>
+<tr class="row-odd"><td><p>QL_LOC_Agps_DataConnOpen</p></td>
+<td><p>Notify that AGPS data connection is opened</p></td>
+</tr>
+<tr class="row-even"><td><p>QL_LOC_Agps_DataConnClose</p></td>
+<td><p>Notify that AGPS data connection is closed</p></td>
+</tr>
+<tr class="row-odd"><td><p>QL_LOC_Agps_NfyDataConnFailed</p></td>
+<td><p>Notify the failure of starting a AGPS data connection</p></td>
+</tr>
+<tr class="row-even"><td><p>QL_LOC_Agps_SetServer</p></td>
+<td><p>Set AGPS server address and port</p></td>
+</tr>
+<tr class="row-odd"><td><p>QL_LOC_NI_SetResponse</p></td>
+<td><p>Send NI user responses</p></td>
+</tr>
+<tr class="row-even"><td><p>QL_LOC_Agps_UpdateNWAvailability</p></td>
+<td><p>Update network availability</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id1">
+<h2><a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Auto-startup_Service.html" class="btn btn-neutral float-left" title="Auto-startup_Service" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, biaowang.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
