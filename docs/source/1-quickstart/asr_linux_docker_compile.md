@@ -9,24 +9,29 @@ However, customers may still encounter some compilation errors. We provide custo
 
 - Install the docker on Ubuntu
 
-    
+
+```    
     sudo apt update
     sudo apt install docker.io
     sudo apt install docker
-    
+```    
 
 - Add the current user to the docker group
 
+```
     sudo groupadd docker
     sudo usermod -aG docker $USER
     sudo gpasswd -a ${USER} docker
     newgrp docker
+```
 
 If you do not try this, you can only use docker with root.
 
 - Add the linux kernel headers
 
-    sudo apt install -y linux-headers-`uname -r`
+```
+    sudo apt install -y linux-headers-\`uname -r\`
+```
 
 By default, we should be able to see it in the /usr/src/linux-headers-`uname -r`.
 
