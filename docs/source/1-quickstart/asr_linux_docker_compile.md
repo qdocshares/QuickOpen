@@ -9,9 +9,11 @@ However, customers may still encounter some compilation errors. We provide custo
 
 - Install the docker on Ubuntu
 
+    
     sudo apt update
     sudo apt install docker.io
-    // if docker.io not working, please try sudo apt install docker
+    //if docker.io not working, please try sudo apt install docker
+    
 
 - Add the current user to the docker group
 
@@ -102,13 +104,12 @@ Here is an example to compile the EC200A_EUAB.
 
 
 
-buildconfig <project> <version> STD
+buildconfig \<project\> \<version\> STD
 
-- <project>  Module model. For example: EC200A_CNAA
+- \<project\>  Module model. For example: EC200A_CNAA
 
-- <version> Firmware version. For example: EC200ACNAAR01A01M1G
+- \<version\> Firmware version. For example: EC200ACNAAR01A01M1G
 
-
 
 The target firmware is in the bin/target.
 
