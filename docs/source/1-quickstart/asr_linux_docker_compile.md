@@ -12,7 +12,7 @@ However, customers may still encounter some compilation errors. We provide custo
     
     sudo apt update
     sudo apt install docker.io
-    //if docker.io not working, please try sudo apt install docker
+    sudo apt install docker
     
 
 - Add the current user to the docker group
@@ -68,6 +68,8 @@ Dockerfile:
 
 
 The default user is test and the password is 1.
+It is based on Ubuntu 18.04.
+
 
 ## Run the command to start the docker container.
 
