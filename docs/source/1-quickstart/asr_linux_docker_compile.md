@@ -30,7 +30,7 @@ If you do not try this, you can only use docker with root.
 - Add the linux kernel headers
 
 ```
-    sudo apt install -y linux-headers-\`uname -r\`
+    sudo apt install -y linux-headers-`uname -r`
 ```
 
 By default, we should be able to see it in the /usr/src/linux-headers-`uname -r`.
@@ -92,7 +92,7 @@ For example, we put the quectel_asr_linux in the folder /data/quectel_asr_linux.
 Notes:
     
 - -v /data/quectel_asr_linux:/home/test/asr_linux means that mount the sdk folder on the host machine at the /home/test/asr_linux in the container.
--  -v /usr/src/linux-headers-`uname -r`:/usr/src/linux-headers-`uname -r`  and -v /lib/modules/`uname -r`:/lib/modules/`uname -r`  means that the container shares the linux kernel headers and kernel modules with the host.
+-  -v /usr/src/linux-headers-\`uname -r\`:/usr/src/linux-headers-\`uname -r\`  and -v /lib/modules/\`uname -r\`:/lib/modules/\`uname -r\`  means that the container shares the linux kernel headers and kernel modules with the host.
 -   --name=asr_build means that asr_build is the docker container name of the docker container we run.
 
 
