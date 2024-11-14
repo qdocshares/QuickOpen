@@ -11,7 +11,7 @@ However, customers may still encounter some compilation errors. We provide custo
 
     sudo apt update
     sudo apt install docker.io
-    # if docker.io not working, please try sudo apt install docker
+    // if docker.io not working, please try sudo apt install docker
 
 - Add the current user to the docker group
 
@@ -82,9 +82,9 @@ For example, we put the quectel_asr_linux in the folder /data/quectel_asr_linux.
 
 Notes:
     
-    -v /data/quectel_asr_linux:/home/test/asr_linux means that mount the sdk folder on the host machine at the /home/test/asr_linux in the container.
-    -v /usr/src/linux-headers-`uname -r`:/usr/src/linux-headers-`uname -r`  and -v /lib/modules/`uname -r`:/lib/modules/`uname -r`  means that the container shares the linux kernel headers and kernel modules with the host.
-    --name=asr_build means that asr_build is the docker container name of the docker container we run.
+- -v /data/quectel_asr_linux:/home/test/asr_linux means that mount the sdk folder on the host machine at the /home/test/asr_linux in the container.
+-  -v /usr/src/linux-headers-`uname -r`:/usr/src/linux-headers-`uname -r`  and -v /lib/modules/`uname -r`:/lib/modules/`uname -r`  means that the container shares the linux kernel headers and kernel modules with the host.
+-   --name=asr_build means that asr_build is the docker container name of the docker container we run.
 
 
 If you want to enter the container, you can use the command
@@ -99,6 +99,16 @@ Here is an example to compile the EC200A_EUAB.
             &&   buildversion  EC200A_EUAB  EC200AEUABR03A01M1G V01 FFF EC200AEUABR03A01M1G 01 01.001  \
         && buildconfig  EC200A_EUAB  EC200AEUABR03A03M1G STD	\
         && build_fw
+
+
+
+buildconfig <project> <version> STD
+
+- <project>  Module model. For example: EC200A_CNAA
+
+- <version> Firmware version. For example: EC200ACNAAR01A01M1G
+
+
 
 The target firmware is in the bin/target.
 
